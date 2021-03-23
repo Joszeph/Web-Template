@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-unfetch'
 import Card from '../../components/Card'
 
-import {GetServerSideProps} from  'next'
+
  
 import styles from './items.module.css'
 
@@ -16,7 +16,7 @@ const Items =({items})=>{
     )
 }
 
-export async function GetServerSideProps(){
+export async function getServerSideProps(){
     
     const{API_URL}=process.env
 
