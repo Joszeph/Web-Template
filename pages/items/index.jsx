@@ -1,31 +1,31 @@
-import fetch from 'isomorphic-unfetch'
-import Card from '../../components/Card'
+// import fetch from 'isomorphic-unfetch'
+// import Card from '../../components/Card'
 
-import styles from './items.module.css'
+// import styles from './items.module.css'
 
-const Items =({items})=>{
-    return(
-        <div className={styles.container}>
-        <h1>Items Page</h1>
-        <div className={styles.itemsList}>
-            <Card items={items} />
-        </div>
-        </div>
-    )
-}
+// const Items =({items})=>{
+//     return(
+//         <div className={styles.container}>
+//         <h1>Items Page</h1>
+//         <div className={styles.itemsList}>
+//             <Card items={items} />
+//         </div>
+//         </div>
+//     )
+// }
 
-export async function getStaticProps(){
+// export async function getStaticProps(){
     
-    const{API_URL}=process.env
+//     const{API_URL}=process.env
 
-    const res = await fetch(`${API_URL}/movies`)
-    const data = await res.json()
+//     const res = await fetch(`${API_URL}/movies`)
+//     const data = await res.json()
   
-    return{
-      props:{
-        items:data
-      }
-    }
-}
+//     return{
+//       props:{
+//         items:data
+//       }
+//     }
+// }
 
-export default Items
+// export default Items
