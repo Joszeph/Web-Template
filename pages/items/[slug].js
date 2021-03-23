@@ -3,6 +3,8 @@ import styles from './details.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import {GetServerSideProps} from 'next'
+
 const Details = ({item}) =>{
     return(
         <div className={styles.container}>
