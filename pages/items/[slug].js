@@ -3,10 +3,23 @@ import styles from './details.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 
-
+import {NextSeo} from 'next-seo'
 
 const Details = ({item}) =>{
+
+    const SEO = {
+        title: `Template Page | ${item.Title} Page`,
+        description: 'Template Page',
+
+        openGraph:{
+            title: `Template Page | ${item.Title} Page`,
+            description: `Template Page ${item.Title} Page`,
+        }
+    }
+
     return(
+        <>
+        <NextSeo {...SEO} />
         <div className={styles.container}>
             <div className={styles.article}>
             <Image src={item.Poster.url} alt={item.Title} width={250} height={400}/>
@@ -19,6 +32,7 @@ const Details = ({item}) =>{
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

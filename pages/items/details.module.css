@@ -11,3 +11,7 @@
 .description{
     margin-left: 30px;
 }
+
+.description a{
+    color: red;
+}
