@@ -63,4 +63,19 @@ export async function getStaticPaths() {
     }
   }
 
+
+  export async function getStaticProps(context){
+    
+    const slug = context.params.slug;
+    const{API_URL}=process.env
+
+    const res = await fetch(`${API_URL}/movies?slug=${slug}`)
+    const data = await res.json()
+  
+    return{
+      props:{
+        items:data
+      }
+    }
+}
 export default Details
