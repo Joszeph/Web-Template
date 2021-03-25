@@ -36,18 +36,31 @@ const Details = ({item}) =>{
     )
 }
 
-export async function getServerSideProps(context) {
+// export async function getServerSideProps(context) {
+//     const{API_URL} = process.env
+//     const { slug } = context.query
+
+//     const res = await fetch(`${API_URL}/movies?slug=${slug}`)
+    
+//     const data = await res.json()
+//     return {
+//         props: {
+//             item: data[0]
+//         },
+//     }
+// }
+
+export async function getStaticPaths() {
     const{API_URL} = process.env
     const { slug } = context.query
-
     const res = await fetch(`${API_URL}/movies?slug=${slug}`)
-    
     const data = await res.json()
     return {
         props: {
             item: data[0]
         },
+      fallback: true,
     }
-}
+  }
 
 export default Details
