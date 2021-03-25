@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 import {NextSeo} from 'next-seo'
 
+
 const Details = ({item}) =>{
 
     const SEO = {
@@ -36,46 +37,19 @@ const Details = ({item}) =>{
     )
 }
 
-// export async function getServerSideProps(context) {
-//     const{API_URL} = process.env
-//     const { slug } = context.query
-
-//     const res = await fetch(`${API_URL}/movies?slug=${slug}`)
-    
-//     const data = await res.json()
-//     return {
-//         props: {
-//             item: data[0]
-//         },
-//     }
-// }
-
-export async function getStaticPaths() {
+export async function getServerSideProps(context) {
     const{API_URL} = process.env
     const { slug } = context.query
+
     const res = await fetch(`${API_URL}/movies?slug=${slug}`)
+    
     const data = await res.json()
     return {
         props: {
             item: data[0]
         },
-      fallback: true,
-    }
-  }
-
-
-  export async function getStaticProps(context){
-    
-    const slug = context.params.slug;
-    const{API_URL}=process.env
-
-    const res = await fetch(`${API_URL}/movies?slug=${slug}`)
-    const data = await res.json()
-  
-    return{
-      props:{
-        items:data
-      }
     }
 }
+
+
 export default Details
