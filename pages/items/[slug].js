@@ -23,7 +23,7 @@ const Details = ({item}) =>{
         <NextSeo {...SEO} />
         <div className={styles.container}>
             <div className={styles.article}>
-            <Image src={item.Poster.url} alt={item.Title} width={250} height={400}/>
+            {/* <Image src={item.Poster.url} alt={item.Title} width={250} height={400}/> */}
                 <div className={styles.description}>
                     <h1>{item.Title}</h1>
                     <p dangerouslySetInnerHTML={{__html: item.description}} />

@@ -7,7 +7,7 @@ const Card =({items})=>{
         <>
         {items.map(item=>(
             <div className={styles.card} key={item.id}>
-                <Image src={item.Poster.url} alt={item.Title} width={250} height={400}/>
+                {/* <Image src={item.Poster.url} alt={item.Title} width={250} height={400}/> */}
                 <div>
                     <h3>{item.Title}</h3>
                     <Link href={`items/${item.slug}`}>  

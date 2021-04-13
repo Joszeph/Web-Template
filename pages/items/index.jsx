@@ -37,7 +37,7 @@ const Items =({items})=>{
     )
 }
 
-export async function getStaticProps(){
+export async function getServerSideProps(){
     
     const{API_URL}=process.env
 
